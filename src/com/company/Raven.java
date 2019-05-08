@@ -6,18 +6,19 @@ import java.util.HashMap;
 
 public class Raven {
 
-    private HashMap<String, String> table = new HashMap<String, String>();
-    private ArrayList<String> positiveArr = new ArrayList<String>();
-    private ArrayList<String> negativeArr = new ArrayList<String>();
-    private ArrayList<String> positive = new ArrayList<String>();
-    private ArrayList<String> negative = new ArrayList<String>();
+    HashMap<String, String> table = new HashMap<String, String>();
+    ArrayList<String> positiveArr = new ArrayList<String>();
+    ArrayList<String> negativeArr = new ArrayList<String>();
+    ArrayList<String> positive = new ArrayList<String>();
+    ArrayList<String> negative = new ArrayList<String>();
 
 
     public Raven() {
+
     }
 
-    public HashMap<String, String> getTable() {
-        return table;
+    public String getTable(String key) {
+        return table.get(key);
     }
 
     public String setTable(String testKey) {
@@ -32,7 +33,7 @@ public class Raven {
         return testKey;
     }
 
-    public ArrayList<String> getPositive (){
+    public ArrayList<String> getPositive(){
         return positive;
     }
     public void setPositive() {
@@ -45,8 +46,8 @@ public class Raven {
         positive.add("creative");
     }
 
-    public String getNegative (int i){
-        return negative.get(i);
+    public ArrayList<String> getNegative(){
+        return negative;
     }
 
     public void setNegative() {

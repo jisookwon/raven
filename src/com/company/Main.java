@@ -14,6 +14,7 @@ public class Main {
         Scanner keyboard = new Scanner(System.in);
         String answer;
         Raven raven = new Raven();
+        //Invoice invoice = new Invoice();
 //        Raven rr = new Raven()
 
         System.out.println("Good Morning, how are you feeling today?");
@@ -34,9 +35,9 @@ public class Main {
                 //convert user input to raven's answer
                 for (int j = 0; j < answerArray.length; j++) {
                     String answerKey = answerArray[j];
-                    if (raven.getTable().get(answerKey) != null) {
-                        System.out.print(raven.getTable().get(answerKey)+" ");
-                        answerArray[j] = raven.getTable().get(answerKey);
+                    if (raven.getTable(answerKey) != null) {
+                        System.out.print(raven.getTable(answerKey)+" ");
+                        answerArray[j] = raven.getTable(answerKey);
                     }
                 }
 
@@ -58,10 +59,10 @@ public class Main {
                     //i.replace(",","");
                     System.out.print(i+" ");
                     int n;
-                    if (raven.getPositive.contains(i)){
+                    if (raven.getPositive().contains(i)){
                         cntPositive++;
                     }else{
-                        if (raven.getNegative.contains(i)){
+                        if (raven.getNegative().contains(i)){
                             cntNegative++;
                         }
                     }
@@ -108,7 +109,13 @@ public class Main {
             }//if for quit
         }//while
 
-        System.out.println("\n>>> BYE!!");
+
+        /*int question=0;
+        String name="";
+        System.out.println("Enter customer name : ");
+        name=keyboard.nextLine();
+        invoice.calculate(question);
+       */ System.out.println("\n>>> BYE!!");
 
     }
 
