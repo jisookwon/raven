@@ -39,22 +39,29 @@ public class Main {
                         answerArray[j] = raven.getTable().get(answerKey);
                     }
                 }
+
                 //print user input
+
+                StringBuilder s = new StringBuilder("");
                 for (String i : answerArray) {
                     System.out.print(i+" ");
+                    s.append(i+" ");
                 }
-                answerArrayList.add(answer);
+                System.out.println(s.toString());
+                answerArrayList.add(s.toString());
+
                 //check positive & negative words
+
                 int cntPositive=0;
                 int cntNegative=0;
                 for (String i : answerArray){
-                    i.replace(",","");
-                    System.out.println(i+" ");
-
-                    if (raven.getPositive().contains(i)){
+                    //i.replace(",","");
+                    System.out.print(i+" ");
+                    int n;
+                    if (raven.getPositive.contains(i)){
                         cntPositive++;
                     }else{
-                        if (raven.getNegative().contains(i)){
+                        if (raven.getNegative.contains(i)){
                             cntNegative++;
                         }
                     }
@@ -70,7 +77,7 @@ public class Main {
                         System.out.print(i + " ");
                     }
                     System.out.println(".");
-                    answerArrayList.add(answerArray);
+                    answerArrayList.add(raven.getPositiveArr(k));
 
                 }else if(cntPositive<cntNegative){
                     Random rr = new Random();
@@ -80,7 +87,7 @@ public class Main {
                         System.out.print(i+" ");
                     }
                     System.out.print(raven.getNegativeArr(l));
-                    answerArrayList.add(answerArray);
+                    answerArrayList.add(raven.getNegativeArr(l));
 
                 }else {
                     System.out.println("Meh...");

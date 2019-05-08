@@ -7,70 +7,35 @@ import java.util.HashMap;
 public class Raven {
 
     private HashMap<String, String> table = new HashMap<String, String>();
-    private ArrayList <String> positiveArr= new ArrayList<String>();
-    private ArrayList <String> negativeArr = new ArrayList<String>();
-    private ArrayList <String> positive = new ArrayList<>();
-    private ArrayList <String> negative = new ArrayList<>();
-    private ArrayList <Array> answerArrayList = new ArrayList<>();
+    private ArrayList<String> positiveArr = new ArrayList<String>();
+    private ArrayList<String> negativeArr = new ArrayList<String>();
+    private ArrayList<String> positive = new ArrayList<String>();
+    private ArrayList<String> negative = new ArrayList<String>();
+
 
     public Raven() {
-    }
-
-    public Raven(HashMap<String, String> table, ArrayList<String> positiveArr, ArrayList<String> negativeArr, ArrayList<String> positive, ArrayList<String> negative) {
-        this.table = table;
-        this.positiveArr = positiveArr;
-        this.negativeArr = negativeArr;
-        this.positive = positive;
-        this.negative = negative;
     }
 
     public HashMap<String, String> getTable() {
         return table;
     }
 
-    public void setTable(HashMap<String, String> table) {
-        this.table = table;
+    public String setTable(String testKey) {
         table.put("i", "you");
         table.put("me", "you");
         table.put("my", "your");
         table.put("am", "are");
+
+        if (table.containsKey(testKey)) {
+            return table.get(testKey);
+        }
+        return testKey;
     }
 
-    /*public ArrayList<String> getPositiveArr() {
-        return positiveArr;
-    }*/
-
-    public String getPositiveArr(int i) {
-        return positiveArr.get(i);
-    }
-
-    public void setPositiveArr(ArrayList<String> positiveArr) {
-        this.positiveArr = positiveArr;
-        positiveArr.add("Good! Please tell me more ");
-        positiveArr.add("Great! ");
-        positiveArr.add("I am so happy for you...Yay...");
-    }
-
-
-    public String getNegativeArr(int i) {
-        return negativeArr.get(i);
-    }
-
-    public void setNegativeArr(ArrayList<String> negativeArr) {
-        this.negativeArr = negativeArr;
-        negativeArr.add("Why do you say that...");
-        negativeArr.add("Really! Why, tell me more!");
-        negativeArr.add("So, you are concerned that ");
-        negativeArr.add("Many of my patients tell me the same thing");
-    }
-
-
-    public ArrayList<String> getPositive() {
+    public ArrayList<String> getPositive (){
         return positive;
     }
-
-    public void setPositive(ArrayList<String> positive) {
-        this.positive = positive;
+    public void setPositive() {
         positive.add("good");
         positive.add("glad");
         positive.add("happy");
@@ -80,12 +45,11 @@ public class Raven {
         positive.add("creative");
     }
 
-    public ArrayList<String> getNegative() {
-        return negative;
+    public String getNegative (int i){
+        return negative.get(i);
     }
 
-    public void setNegative(ArrayList<String> negative) {
-        this.negative = negative;
+    public void setNegative() {
         negative.add("bad");
         negative.add("sad");
         negative.add("tired");
@@ -94,6 +58,26 @@ public class Raven {
         negative.add("hungry");
         negative.add("moody");
         negative.add("afraid");
+    }
+    public String getPositiveArr(int i) {
 
+        return positiveArr.get(i);
+    }
+
+    public void setPositiveArr() {
+        positiveArr.add("Good! Please tell me more ");
+        positiveArr.add("Great! ");
+        positiveArr.add("I am so happy for you...Yay...");
+    }
+
+    public String getNegativeArr (int i){
+        return negativeArr.get(i);
+    }
+
+    public void setNegativeArr() {
+        negativeArr.add("Why do you say that...");
+        negativeArr.add("Really! Why, tell me more!");
+        negativeArr.add("So, you are concerned that ");
+        negativeArr.add("Many of my patients tell me the same thing");
     }
 }
