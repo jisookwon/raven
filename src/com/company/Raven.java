@@ -36,8 +36,12 @@ public class Raven {
         table.put("am", "are");
     }
 
-    public ArrayList<String> getPositiveArr() {
+    /*public ArrayList<String> getPositiveArr() {
         return positiveArr;
+    }*/
+
+    public String getPositiveArr(int i) {
+        return positiveArr.get(i);
     }
 
     public void setPositiveArr(ArrayList<String> positiveArr) {
@@ -47,8 +51,9 @@ public class Raven {
         positiveArr.add("I am so happy for you...Yay...");
     }
 
-    public ArrayList<String> getNegativeArr() {
-        return negativeArr;
+
+    public String getNegativeArr(int i) {
+        return negativeArr.get(i);
     }
 
     public void setNegativeArr(ArrayList<String> negativeArr) {
@@ -58,6 +63,7 @@ public class Raven {
         negativeArr.add("So, you are concerned that ");
         negativeArr.add("Many of my patients tell me the same thing");
     }
+
 
     public ArrayList<String> getPositive() {
         return positive;

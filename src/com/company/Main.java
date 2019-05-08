@@ -1,6 +1,5 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -10,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ArrayList <String> answerArrayList = new ArrayList<>();
 
         Scanner keyboard = new Scanner(System.in);
         String answer;
@@ -30,7 +30,7 @@ public class Main {
                     System.out.print(i+ " ");
 
                 }
-                answerArrayList.add(answerArray);
+                answerArrayList.add(answer);
                 //convert user input to raven's answer
                 for (int j = 0; j < answerArray.length; j++) {
                     String answerKey = answerArray[j];
@@ -43,12 +43,11 @@ public class Main {
                 for (String i : answerArray) {
                     System.out.print(i+" ");
                 }
-
+                answerArrayList.add(answer);
                 //check positive & negative words
                 int cntPositive=0;
                 int cntNegative=0;
                 for (String i : answerArray){
-
                     i.replace(",","");
                     System.out.println(i+" ");
 
@@ -66,22 +65,26 @@ public class Main {
                 if (cntPositive>cntNegative){
                     Random r = new Random();
                     int k= (r.nextInt(3)-1);
-                    System.out.println(raven.getpositiveArr(k) + " ");
+                    System.out.println(raven.getPositiveArr(k) + " ");
                     for (String i : answerArray) {
                         System.out.print(i + " ");
                     }
                     System.out.println(".");
+                    answerArrayList.add(answerArray);
+
                 }else if(cntPositive<cntNegative){
                     Random rr = new Random();
                     int l= (rr.nextInt(3)-1);
-
+                    System.out.println(raven.getNegativeArr(l) + " ");
                     for (String i:answerArray){
                         System.out.print(i+" ");
                     }
-                    System.out.print(negativeArr.get(l));
+                    System.out.print(raven.getNegativeArr(l));
+                    answerArrayList.add(answerArray);
 
                 }else {
                     System.out.println("Meh...");
+                    answerArrayList.add("Meh...");
                 }
                 /*Random r = new Random();
                 int k= (r.nextInt(3)-1);
